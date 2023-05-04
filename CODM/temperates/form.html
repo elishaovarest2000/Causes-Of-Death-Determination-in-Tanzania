@@ -3,13 +3,31 @@
 {% block content%}
    
 <!-- Taarifa za Fomu -->
-    <div class="col-md-9 mb-3 ps-3 ">
+    <div class="col-md-9 mb-3 ps-3 pt-3">
         <div class="row mb-5">
+
+          {% if messages %}
+          <ul class="messages bg-success text-light p-3 list-unstyled fs-5 text-center">
+          {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+          {% endfor %}
+          </ul>
+          {% endif %}
+          <script>
+          setTimeout(function() {
+            var messages = document.getElementsByClassName('messages');
+            for (var i = 0; i < messages.length; i++) {
+              messages[i].style.display = 'none';
+            }
+          }, 5000);
+
+          </script>
           <div class="col-md-8">
             <h3>Kuanza Mahojiano</h3>
           </div>
 
-          <div class="col-md-4">
+
+          <!-- <div class="col-md-4">
             <div class="mb-1 row">
               <label for="firstName" class="col-sm-5 col-form-label fs-5"><b>Rejea Namba</b></label>
               <div class="col-sm-7">
@@ -18,12 +36,11 @@
               </div>
             </div>
           </div>
-          <!-- <hr class="my-4"> -->
         </div>
-      
+       -->
     <!-- Taarifa za Mhoji -->
 
-        <div class="col-12 p-1 mb-4 text-light bg-success">
+        <!-- <div class="col-12 p-1 mb-4 text-light backgroung">
             <h4 class="text-center">Taarifa za Mhoji</h4>
           </div> 
 
@@ -56,9 +73,9 @@
               <div class="invalid-feedback">
                 Valid last name is required.
               </div> 
-      </div>
+      </div> -->
 
-          <div class="col-12 p-1 mb-4 text-light bg-success">
+          <div class="col-12 p-1 mb-4  mt-3 text-light backgroung">
             <h4 class="text-center">Taarifa za Mhojiwa</h4>
           </div> 
         
@@ -125,6 +142,15 @@
                     Valid last name is required.
                   </div> 
                 </div>
+                <div class="mb-3 row">
+                  <label for="shahidi" class="col-sm-2 col-form-label">Simu</label>
+                  <div class="col-sm-8">
+                    <input type="number" class="form-control" id="shahidi">
+                  </div>
+                  <div class="invalid-feedback">
+                    Valid last name is required.
+                  </div> 
+                </div>
 
                      <!-- Radio buttons    -->
 
@@ -173,7 +199,7 @@
 
           <!-- Taarifa za Marehemu    -->
            <div class="row mb-3">
-               <div class="col-12 p-1 mb-4 text-light bg-success">
+               <div class="col-12 p-1 mb-4 text-light backgroung">
             <h4 class="text-center">Taarifa za Marehemu</h4>
           </div>
 
@@ -365,7 +391,7 @@
           <!--Hali Ya Matibabu Ya Marehemu-->
   
           <div class="row">
-            <div class="col-12 p-1 mb-4 text-light bg-success">
+            <div class="col-12 p-1 mb-4 text-light backgroung">
               <h4 class="text-center">Hali Ya Matibabu Ya Marehemu</h4>
             </div>
            </div>
@@ -433,7 +459,7 @@
           <div class="row">
           <div class="col-10"></div>
           <div class="col-2">
-           <button class="btn btn-success px-5">Wasilisha</button>
+           <button class="btn backgroung text-light px-5">Wasilisha</button>
           </div>
           </div>
         </div>

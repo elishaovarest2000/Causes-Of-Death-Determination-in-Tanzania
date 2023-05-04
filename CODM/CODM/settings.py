@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Questionnaire.apps.QuestionnaireConfig',
+    'report.apps.ReportConfig',
+    'dashboard.apps.DashboardConfig'
 ]
 
 MIDDLEWARE = [
@@ -84,6 +86,17 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'Cause_of_death',
+#         'USER': 'root',
+#         'PASSWORD': '',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#     }
+# }
 
 
 # Password validation
@@ -134,4 +147,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
 
